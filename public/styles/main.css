@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #0096FF;
+    font-family: 'Courier New', monospace;
+}
+h2{
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-color: #161618;
+}
+.navbar{
+    background-color: greenyellow;
+}
+.listItem{
+    color: azure;
+}
+.timestamp{
+    color: greenyellow;
+}
+.form-container{
+    margin-top: 50px;
+}

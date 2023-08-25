@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<body>
+    
+
+    <h1 class="title">Work ToDoList</h1>
+
+    <div class="mx-auto w-25 border p-3 bg bg-opacity-10 border-success rounded-pill">
+        <h2 class="timestamp"><%= timestamp %></h2>
+    </div>
+    <div class="form-container middle">
+    <form action="/submitWork" method="POST" class="form">
+        <input type="text" id="addList" name="addList" required>
+        <input type="submit" value="+">
+    </form>
+ </div>
+    <div class="todoList middle">
+    <ul>
+        <% worktodoList.forEach((element) => { %>
+            <div>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><li class="listItem"> <%= element %> </li>
+            </div>
+      <%  }) %>
+    </ul>
+</div>
+<form action="/clearWork" method="POST" class="clear middle">
+    <input type="submit" value="Clear List">
+</form>
+</body>
