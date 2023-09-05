@@ -7,9 +7,6 @@ import 'dotenv/config'
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday"];
 const monthNames = ["January", "February", "March", "April","May","June","July","August", "September", "October", "November","December"];
 const app = express();
-const port = 3000;
-
-
 
 // Database Stuff
 mongoose.connect(process.env.DB_LINK);
@@ -177,6 +174,12 @@ app.get("/:customListName", (req,res) =>{
         console.log("Error:" + error);
     })
 });
+
+let port = process.env.PORT;
+if(port == null || port == "") {
+    port = 3000;
+}
+
 app.listen(port,() =>{
-    console.log(`Server is active on port ${port}.`);
+    console.log(`Server has started successfully.`);
 })
