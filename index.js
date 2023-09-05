@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import _ from "lodash";
+import 'dotenv/config'
 
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday"];
 const monthNames = ["January", "February", "March", "April","May","June","July","August", "September", "October", "November","December"];
@@ -11,7 +12,7 @@ const port = 3000;
 
 
 // Database Stuff
-mongoose.connect("mongodb+srv://admin-bus:newxgxnn@cluster0.tlilvc7.mongodb.net/todolistDB")
+mongoose.connect(process.env.DB_LINK);
 const itemsSchema = {
     name: String
 }
